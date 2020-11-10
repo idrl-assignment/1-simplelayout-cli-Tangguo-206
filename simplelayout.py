@@ -15,7 +15,11 @@ def main():
 
     if args.board_grid % args.unit_grid != 0:
         sys.exit(0)
-    if args.positions[0] != 1 or len(args.positions) != args.unit_n or max(args.positions) > (args.board_grid / args.unit_grid) ** 2:
+    if (
+        args.positions[0] != 1
+        or len(args.positions) != args.unit_n
+        or max(args.positions) > (args.board_grid / args.unit_grid) ** 2
+    ):
         sys.exit(0)
     if not os.path.isdir(args.outdir):
         os.makedirs(args.outdir)
