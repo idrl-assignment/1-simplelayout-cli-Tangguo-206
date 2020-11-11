@@ -14,13 +14,13 @@ def main():
     args = parser.parse_args()
 
     if args.board_grid % args.unit_grid != 0:
-        sys.exit(0)
+        sys.exit("unit_grid不能被board_grid整除！")
     if (
         args.positions[0] != 1
         or len(args.positions) != args.unit_n
         or max(args.positions) > (args.board_grid / args.unit_grid) ** 2
     ):
-        sys.exit(0)
+        sys.exit("位置参数不符合要求！")
     if not os.path.isdir(args.outdir):
         os.makedirs(args.outdir)
     with open(args.outdir + '/' + args.file_name + '.jpg', 'w') as f:
