@@ -11,6 +11,15 @@ def main():
     parser.add_argument("--positions", nargs='+', type=int, help="位置")
     parser.add_argument("--outdir", default="example-dir", help="输出结果的目录")
     parser.add_argument("--file_name", default="example", help="输出文件名")
+    """
+    上下调用参数的区别
+    parser.add_argument("board_grid", type=int, help="布局板分辨率")
+    parser.add_argument("unit_grid", type=int, help="矩形组件分辨率")
+    parser.add_argument("unit_n", type=int, help="组件数")
+    parser.add_argument("positions", nargs='+', type=int, help="位置")
+    parser.add_argument("outdir", default="example-dir", help="输出结果的目录")
+    parser.add_argument("file_name", default="example", help="输出文件名")
+    """
     args = parser.parse_args()
 
     if args.board_grid % args.unit_grid != 0:
